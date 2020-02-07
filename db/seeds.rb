@@ -8,17 +8,19 @@
 
 User.create(
   name: 'Joseph',
-  password_digest: '123123',
+  password: '123123',
+  password_confirmation: '123123',
   email: 'yosept.flores@gmail.com'
 )
 
 Post.create(
-  title: 'my first post',
-  content: 'the content'
+  title: "a"*10,
+  content: "b"* 30,
+  user_id: 1
 )
 
 Comment.create(
-  content: 'message, content',
+  content: 'c'*30,
   user_id: 1,
   post_id: 1
 )
