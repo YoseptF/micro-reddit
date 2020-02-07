@@ -2,14 +2,11 @@ require 'test_helper'
 
 class PostTest < ActiveSupport::TestCase
   def setup
-    @user = User.create(name: 'joseph', password_digest: 'lol', email: 'mail@m.com')
-    @post = Post.create(title: 'dog', content: 'cat', user_id: @user.id)
+    # test makes it's own user with a specific id number.
+    @post = Post.create(title: 'dog', content: 'cat', user_id: User.first.id)
   end
-  # test "the truth" do
-  #   assert true
-  # end
-  test 'valid user' do
+
+  test 'valid post' do
     assert @post.valid?
-    p User.all
   end
 end
